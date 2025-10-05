@@ -85,7 +85,6 @@ void Vector::free() {
 	m_size = m_capacity = 0;
 }
 
-// Public interface
 size_t Vector::size() const {
 	return m_size;
 }
