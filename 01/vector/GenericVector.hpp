@@ -45,9 +45,6 @@ public:
 	const T* data() const;
 };
 
-// Implementation
-
-// Constructors
 template<typename T>
 GenericVector<T>::GenericVector() : data(new T[INITIAL_CAPACITY]), m_size(0), m_capacity(INITIAL_CAPACITY) { }
 
@@ -87,7 +84,6 @@ GenericVector<T>::~GenericVector() {
 	free();
 }
 
-// Private helper functions
 template<typename T>
 void GenericVector<T>::assertIndex(size_t index) const {
 	if (index >= m_size) {
@@ -147,7 +143,6 @@ void GenericVector<T>::free() {
 	m_size = m_capacity = 0;
 }
 
-// Public interface
 template<typename T>
 size_t GenericVector<T>::size() const {
 	return m_size;
