@@ -241,7 +241,7 @@ __Time complexity__: брой елементарни операции нужни
 __Space complexity__: количество памет нужно за изпълнението на даден алгоритъм. Не броим входните данни
 
 
-![alt text](res/01_complexity.png)
+![alt text](res/01_complexity.jpeg)
 
 
 
