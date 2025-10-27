@@ -74,7 +74,7 @@ int main() {
 lhs:   1 <-> 2 <-> 3
 rhs:   2 <-> 3 <-> 4
 ans:   3 <-> 5 <-> 7
-``
+```
 
 ### 2. removeIf()
 Да се реализира следна функция `void removeIf(Node*& from, const Node* what);` – премахва от списъка с начало from
