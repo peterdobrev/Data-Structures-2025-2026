@@ -6,28 +6,35 @@
 
 class MinStack {
 private:
-
+    std::stack<int> st;
+    std::stack<int> min_st;
 public:
     MinStack() {}
     
     void push(int val) {
-        // TODO
+        this->st.push(val);
+        if(this->min_st.empty()) {
+            this->min_st.push(val);
+        } else {
+            this->min_st.push(std::min(this->min_st.top(), val));
+        }
     }
     
     bool empty() {
-        // TODO
+        return st.empty();
     }
 
     void pop() {
-        // TODO
+        this->st.pop();
+        this->min_st.pop();
     }
     
     int top() {
-        // TODO
+        return this->st.top();
     }
     
     int getMin() {
-        // TODO
+        return this->min_st.top();
     }
 };
 
