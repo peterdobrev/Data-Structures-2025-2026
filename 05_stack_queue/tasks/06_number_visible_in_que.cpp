@@ -5,9 +5,27 @@
 std::vector<int> canSeePersonsCount(std::vector<int>& heights) {
     int n = heights.size();
     std::vector<int> res(n);
+        
+    std::stack<int> tallest_pos;
+    res[n-1] = 0;
+    tallest_pos.push(n-1);
 
-    // TODO
-    
+    for (int i = n - 2; i >= 0; i--) {
+        if (heights[i] <= heights[tallest_pos.top()]) {
+            res[i] = 1;
+            tallest_pos.push(i);
+            continue;
+        }
+        
+        int cnt = tallest_pos.size();
+        while(!tallest_pos.empty() && heights[i] > heights[tallest_pos.top()]) {
+            tallest_pos.pop();
+        }
+        
+        res[i] = cnt - tallest_pos.size() + !tallest_pos.empty(); 
+        tallest_pos.push(i);
+    }
+
     return res;
 }
 
@@ -19,8 +37,4 @@ int main() {
         std::cout << res1[i] << " ";
     }
     std::cout << std::endl;
-
-    // std::vector<int> input2 = {5,1,2,3,10};
-    // expected => {4,1,1,1,0}
-
 }
